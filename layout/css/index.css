@@ -26,10 +26,6 @@ header {
     min-height: 15rem;
 }
 
-header * {
-    .border: 1px solid red;
-}
-
 /* DONE: set the font size of the <h1> in the <header> to 5rem
 and the font weight to 200 */
 header h1 {
@@ -61,7 +57,7 @@ a:hover svg, a:focus svg {
 
 .row {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .col {
