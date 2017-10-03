@@ -14,15 +14,20 @@ body {
 /* DONE: constrain the width of <div class="container"> elements to a max of 1140px
 and keep the content horizontally-centered with 1rem of padding on left/right */
 .container {
-    max-width: 1140px;
-    text-align: center;
+    /* max-width: 1140px; */
     padding: 0 1rem;
+    display: flex;
 }
 
 /* DONE: set background image of the <header> to `header.jpg` in the `img` directory,
 and set text color to white, and ensure the height is at least 200px */
 header {
     background-image: url("../img/header.jpg");
+    min-height: 15rem;
+}
+
+header * {
+    .border: 1px solid red;
 }
 
 /* DONE: set the font size of the <h1> in the <header> to 5rem
@@ -30,11 +35,15 @@ and the font weight to 200 */
 header h1 {
     font-size: 5rem;
     font-weight: 200;
+    color: white;
+    flex: 1;
+    line-height: 0;
 }
 
 /* DONE: set the height of the SVG icon to 3rem */
 header svg {
     height: 3rem;
+    margin: 1rem 0;
 }
 
 /* DONE: make the color of the hyperlink icon white instead of blue
@@ -52,6 +61,7 @@ a:hover svg, a:focus svg {
 
 .row {
     display: flex;
+    justify-content: center;
 }
 
 .col {
@@ -61,7 +71,7 @@ a:hover svg, a:focus svg {
     font-weight: 600;
     color: #FFF;
     display: flex;
-    flex: 1;
+    align-items: center;
 }
 
 /* TODO: set the background color of every-other <div class="col"> element 
