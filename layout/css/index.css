@@ -8,25 +8,51 @@ body {
     font-size: 18px;
 }
 
-/* TODO: tell the browser to include borders and padding in size calculations */
+/* DONE: tell the browser to include borders and padding in size calculations */
+* { box-sizing: border-box;}
 
-/* TODO: constrain the width of <div class="container"> elements to a max of 1140px
+/* DONE: constrain the width of <div class="container"> elements to a max of 1140px
 and keep the content horizontally-centered with 1rem of padding on left/right */
+.container {
+    max-width: 1140px;
+    text-align: center;
+    padding: 0 1rem;
+}
 
-/* TODO: set background image of the <header> to `header.jpg` in the `img` directory,
+/* DONE: set background image of the <header> to `header.jpg` in the `img` directory,
 and set text color to white, and ensure the height is at least 200px */
+header {
+    background-image: url("../img/header.jpg");
+}
 
-/* TODO: set the font size of the <h1> in the <header> to 5rem
+/* DONE: set the font size of the <h1> in the <header> to 5rem
 and the font weight to 200 */
+header h1 {
+    font-size: 5rem;
+    font-weight: 200;
+}
 
-/* TODO: set the height of the SVG icon to 3rem */
+/* DONE: set the height of the SVG icon to 3rem */
+header svg {
+    height: 3rem;
+}
 
-/* TODO: make the color of the hyperlink icon white instead of blue
+/* DONE: make the color of the hyperlink icon white instead of blue
 and when it has focus/hover change the color to #FF9800, 
 from Material Design Color Palette: 
 https://material.io/guidelines/style/color.html#color-color-palette */
+a:link svg {
+    fill: white;
+}
+a:hover svg, a:focus svg {
+    fill: #FF9800;
+}
 
 /* TODO: make the <div class="col"> elements layout side-by-side instead of stacked */
+
+.row {
+    display: flex;
+}
 
 .col {
     background-color: #FF9800; 
@@ -34,8 +60,12 @@ https://material.io/guidelines/style/color.html#color-color-palette */
     min-height: 150px;
     font-weight: 600;
     color: #FFF;
+    display: flex;
+    flex: 1;
 }
 
 /* TODO: set the background color of every-other <div class="col"> element 
 to #E65100 so that we can see where the column begin/end */
-
+.col:nth-child(odd) {
+    background-color: #E65100;
+}
