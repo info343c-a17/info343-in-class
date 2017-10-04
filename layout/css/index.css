@@ -68,12 +68,11 @@ a:hover svg, a:focus svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* flex: 1; */
-}
-/* Easier way is copying .col:nth-child(x) 4x with the correct numbers 2-5 */
-/* This is the fancy way */
-.col:nth-child(n+2):nth-child(-n+5) {
     flex: 1;
+}
+
+.col:nth-child(1) {
+    min-width: 250px;
 }
 
 /* TODO: set the background color of every-other <div class="col"> element 
