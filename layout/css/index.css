@@ -57,7 +57,6 @@ a:hover svg, a:focus svg {
 
 .row {
     display: flex;
-    flex-direction: row-reverse;
 }
 
 .col {
@@ -70,6 +69,10 @@ a:hover svg, a:focus svg {
     align-items: center;
     justify-content: center;
     flex: 1;
+}
+
+.col:nth-child(3) {
+    order: 6;
 }
 
 /* TODO: set the background color of every-other <div class="col"> element 
