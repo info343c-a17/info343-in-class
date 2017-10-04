@@ -57,7 +57,6 @@ a:hover svg, a:focus svg {
 
 .row {
     display: flex;
-    justify-content: flex-end;
 }
 
 .col {
@@ -68,6 +67,8 @@ a:hover svg, a:focus svg {
     color: #FFF;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex: 1;
 }
 
 /* TODO: set the background color of every-other <div class="col"> element 
