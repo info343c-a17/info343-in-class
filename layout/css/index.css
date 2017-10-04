@@ -75,6 +75,10 @@ a:hover svg, a:focus svg {
     min-width: 250px;
 }
 
+.col:nth-child(2) {
+    flex: 3;
+}
+
 /* TODO: set the background color of every-other <div class="col"> element 
 to #E65100 so that we can see where the column begin/end */
 .col:nth-child(odd) {
