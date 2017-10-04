@@ -68,6 +68,10 @@ a:hover svg, a:focus svg {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* flex: 1; */
+}
+
+.col:nth-child(1) {
     flex: 1;
 }
 
