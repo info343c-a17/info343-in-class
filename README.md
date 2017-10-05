@@ -1,4 +1,4 @@
-# INFO 343-D In-Class Coding Repo
+# INFO 343-C In-Class Coding Repo
 
 Fork this repo into your own account by clicking the **Fork** button in the upper-right of the page. This will create a copy of the repo that is all yours. Clone your forked copy to your development machine (not this original repo) so that you can add code, commit it, and push it back to your forked copy on GitHub.
 
