@@ -1,0 +1,71 @@
+/* these rules apply to _all_ screen sizes */
+body {
+    background-color: #62E8FF; /* background color on small screens */
+    font-size: 16px;                   /* default font size is 16 pixels */
+}
+
+.phone-number {
+    display: none;
+}
+
+.mobile-call-icon {
+    width: 64px;
+    fill: #FFFFFF;
+    background-color: rgba(0,0,0,.755);
+    border-radius: .75em;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 15em;
+    background-color: rgba(0,0,0,.25);
+}
+
+.col {
+    background-color: rgba(255,255,255,.5);
+    transition: all: 2s ease-out 0.1s;
+}
+/* no flexbox by default... */
+
+@media (min-width: 768px) {
+    /* these rules apply _only_ to screens 768 pixels and wider */
+
+    body {
+        background-image: url("../img/background.jpg");   /* use background image on larger screens */
+        font-size: 18px;              /* increase font size to 18 pixels on larger screens */
+        color: rgb(255, 255, 255);
+    }
+
+    .mobile-call-icon {
+        display: none;                /* hide mobile call icon */
+    }
+
+    .phone-number {
+        display: inline;              /* show the textual telephone number */
+        color: lightcyan;
+    }
+
+    /* on screens 768px and wider, make the .row element a flexbox */
+    .row {
+        display: flex;
+    }
+    /* and make the .col elements grow to consume the row width */
+    .col {
+        flex-grow: 1;
+        background-color: rgba(0,0,0,0);
+    }
+}
+
+@media (min-width: 1600px) {
+    body {
+        background-color: rgb(175,50,150);
+        background-image: none;
+    }
+    .col {
+        background-color: rgba(255,255,255,.5);
+        margin: 1em;
+    }
+}
