@@ -48,3 +48,6 @@ https://www.w3schools.com/css/css3_animations.asp
   75% { property: type(value); }
 }
 ```
+
+## How to use CSS3 transitions and transforms to create animations
+https://getflywheel.com/layout/css3-transitions-transforms-create-animations/
