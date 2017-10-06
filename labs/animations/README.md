@@ -1,3 +1,12 @@
+## CSS :hover Selector
+https://www.w3schools.com/cssref/sel_hover.asp
+### Hint:
+```
+main div:nth-child(N):hover {
+  ...
+}
+```
+
 ## CSS3 Transitions:
 https://www.w3schools.com/css/css3_transitions.asp
 ### Hint:
