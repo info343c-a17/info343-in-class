@@ -311,6 +311,9 @@ function randomIntegers(amount, max) {
 
 }
 
+let randomNums = randomIntegers(10, 100);
+console.log("random integers:", randomNums);
+
 /**
  * Returns the maximum value from an array of numbers
  * @param {number[]} arrayOfNumbers 
@@ -321,8 +324,39 @@ function max(arrayOfNumbers) {
 
 }
 
-let randomNums = randomIntegers(10, 100);
 console.log("the maximum value in %o is %d", randomNums, max(randomNums));
+
+/**
+ * Returns a new array with the same number of elements
+ * as the `input` array, but with the order of the
+ * elements reversed
+ * @param {*[]} input 
+ * @returns {*[]}
+ */
+function reverseArray(input) {
+    //TODO: implement this function according to the comments    
+}
+
+console.log("random integers reversed:", reverseArray(randomNums));
+
+/* SPLITTING and JOINING STRINGS 
+Every string has a built-in .split() method that
+splits the string into an array of sub-strings based
+on a separator. For example, "aa;bb;cc".split(";") will
+return an array containing ["aa","bb","cc"]. If you
+specify an empty string as the separator, it splits
+the string into an array of letters.
+
+Every array has a .join() method, which joins the 
+array elements into a string, optionally putting a
+separator in between each element. For example, 
+["aa","bb","cc"].join(";") returns "aa;bb;cc".
+If you specify an empty string as the separator,
+it doesn't put anything in between the elements.
+*/
+//TODO: use .split() and .join() to reverse this string
+//remember that you already have a reverseArray() function
+let stringToReverse = "stressed";
 
 
 /* FUNCTIONS CALLING FUNCTIONS */
