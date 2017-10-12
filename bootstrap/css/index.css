@@ -1,2 +1,9 @@
 /* TODO: override/augment Bootstrap styling where necessary */
-
+@media (min-width: 768px) {
+    header {
+        background: url("../img/header.jpg") center;
+        min-height: 400px;
+        color: white;
+        margin-bottom: 1rem;
+    }
+}
