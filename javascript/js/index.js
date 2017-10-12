@@ -53,14 +53,14 @@ The primitive data types include:
 
 //TODO: declare a new variable named `x`
 //and initialize it to a literal string
-
+let x = 'this is literally a string';
 
 //the `console` object represents the developer
 //tools console, or the terminal if you run this
 //under Node.js. The `.log()` method writes the 
 //value of an expression to the console.
 //TODO: write `x` to the console
-
+console.log('var x = ' + x);
 
 //if you don't initialize a new variable
 //it's value is `undefined`
@@ -79,7 +79,7 @@ if (temp > 0) {
 }
 //what do you think the value of `temp` is after the if block?
 //use console.log() to find out!
-
+console.log('temp = ', temp);
 
 let temp2 = 5;
 if (temp2 > 0) {
@@ -88,7 +88,7 @@ if (temp2 > 0) {
 }
 //what do you think the value of `temp2` is after the if block?
 //use console.log() to find out!
-
+console.log('temp2 = ' + temp2);
 
 //moral of the story: use `let` instead of `var`
 
@@ -104,31 +104,34 @@ To create a zero-length array, just use `[]`.
 */
 //TODO: declare a variable named `emptyArray`
 //and set it equal to an empty array
+let emptyArray = [];
 
 //TODO: declare a variable named `nums`
 //and set it equal to an array of numbers
 //containing 10,11,12,13,14
+let nums = [10,11,12,13,14];
 
 
 //the `.length` property returns 
 //the number of elements in the array
 //TODO: write the length of `nums` to the console
-
+console.log(nums.length);
 
 //you can add elements to the end of an array 
 //using the build-in .push() method
 //TODO: add the number 15 to the end of the `nums` array
-
+nums.push(15);
+console.log(nums);
 
 //TODO: create a new variable named `courses`
 //that is initialized to an array of strings,
 //one for each course name you are currently 
 //taking (e.g., "INFO 343"), 
 //and write that to the console
-
+let courses = ["INFO 343", "INFO 431", "INFO 495"];
 
 //TODO: write the last element in the array to the console
-
+console.log(courses[courses.length-1]);
 
 /* FOR LOOPS
 For loops work exactly like they do in Java,
@@ -147,8 +150,13 @@ between 0 and 49. Write the populated
 array to the console to make sure you
 did it right.
 */
-
-
+let evenNum = [];
+for (let i = 0; i < 50; i++) {
+    if(i%2 == 0) {
+        evenNum.push(i);
+    }
+}
+console.log(evenNum);
 /* OBJECTS
 
 JavaScript also has built-in support for
@@ -168,7 +176,7 @@ use `{}`.
 
 //TODO: declare a new variable named `emptyObject`
 //and set it equal to an empty object
-
+let emptyObject = {};
 
 //TODO: declare a new variable named `player`
 //and set it to an object with the following properties:
@@ -176,12 +184,19 @@ use `{}`.
 // lastName = "Rodriguez"
 // totalPoints = 4
 // level = 0
+let player  = {
+    firstName: "Benny",
+    nickName: "The Jet",
+    lastName: "Rodriguez",
+    totalPoints: 4,
+    level: 0
+}
 
 
 //you can get the value for a key using
 //the familiar `.` syntax
 //TODO: write the firstName and lastName properties to the console
-
+console.log(player.nickName);
 
 //you can also get the value for a key
 //using an array-like syntax, which can
@@ -202,12 +217,16 @@ use `{}`.
 //returns `undefined` (no error)
 //TODO: write the value of the `phone` property to the console
 //(doesn't exist, so it should just write "undefined", with no error)
-
+player.email = "benny@thejet.com";
+console.log(player.firstName, player.email);
 
 //you can iterate over all keys/values using
 //the for...in syntax
 console.group("keys/values from player using for...in");
 //TODO: iterate over all keys/values using for...in
+for (let prop in player) {
+    console.log(prop, player[prop]);
+}
 console.groupEnd();
 
 //or you can get the keys as an array using Object.keys()
@@ -215,6 +234,9 @@ console.groupEnd();
 console.group("keys/values from player using Object.keys()");
 //TODO: use Object.keys(player) to get an array with all the
 //keys, and then iterate that using a standard for loop
+for(let i = 0; i < Object.keys(player).length; i++) {
+    console.log(Object.keys(player)[i],player[Object.keys(player)[i]]);
+}
 console.groupEnd();
 
 //TODO: reset your `courses` variable defined
@@ -226,11 +248,27 @@ console.groupEnd();
 //          or omit if there is no section letter
 // - teachers: an array containing the names of your teacher and TA(s)
 //          for that course
-
+let myCourses = [
+    {
+        name: "INFO 343", 
+        section: "C", 
+        instructors: ["Jacob", "John"]
+    },
+    {
+        name: "INFO 431",
+        section: "D",
+        instructors: ["Sally", "Bill"]
+    },
+    {
+        name: "INFO 495",
+        section: "A",
+        instructors: ["Darth", "Yoda"]
+    }
+]
 
 //TODO: write the first teacher name from the 
 //last course in the `courses` array to the console
-
+console.log(myCourses[myCourses.length-1].instructors[1]);
 
 
 /* FUNCTIONS
