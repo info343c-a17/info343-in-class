@@ -151,10 +151,8 @@ array to the console to make sure you
 did it right.
 */
 let evenNum = [];
-for (let i = 0; i < 50; i++) {
-    if(i%2 == 0) {
+for (let i = 0; i < 50; i+=2) {
         evenNum.push(i);
-    }
 }
 console.log(evenNum);
 /* OBJECTS
@@ -204,7 +202,8 @@ console.log(player.nickName);
 //TODO: get the lastName property using the 
 //array-like syntax, using a variable set to "lastName"
 //as the expression
-
+let y = "lastName";
+console.log(player[y]);
 
 //these key/value pairs are often called "properties"
 //because the syntax looks a lot like property 
@@ -212,13 +211,14 @@ console.log(player.nickName);
 //or removed at any time.
 //TODO: add a new `email` property set to "mary@example.com"
 //and write that to the console
+player.email = "benny@thejet.com";
+console.log(player.firstName, player.email);
 
 //accessing a key that doesn't exist yet
 //returns `undefined` (no error)
 //TODO: write the value of the `phone` property to the console
 //(doesn't exist, so it should just write "undefined", with no error)
-player.email = "benny@thejet.com";
-console.log(player.firstName, player.email);
+console.log(player.phone);
 
 //you can iterate over all keys/values using
 //the for...in syntax
@@ -234,8 +234,9 @@ console.groupEnd();
 console.group("keys/values from player using Object.keys()");
 //TODO: use Object.keys(player) to get an array with all the
 //keys, and then iterate that using a standard for loop
-for(let i = 0; i < Object.keys(player).length; i++) {
-    console.log(Object.keys(player)[i],player[Object.keys(player)[i]]);
+let keyArray = Object.keys(player);
+for(let i = 0; i < keyArray.length; i++) {
+    console.log(keyArray[i],player[keyArray[i]]);
 }
 console.groupEnd();
 
