@@ -26,10 +26,60 @@ main {
     align-items: center;
     justify-content: center;
     margin-right: 2rem;
+    opacity: 1;
 }
 
 main div:last-of-type {
     margin-right: 0;
+}
+
+/* Box 1: 2d spin */
+main div:nth-child(1):hover {
+    transform: rotate(360deg);
+    transition-duration: 5s;
+    background-color: black;
+}
+
+/* Box 2: fade out */
+main div:nth-child(2):hover {
+    transition-property: opacity;
+    transition-duration: 3s;
+    opacity: 0;
+}
+
+/* Box 3: drop out (drop to bottom of viewport while fading out) */
+main div:nth-child(3):hover {
+    transform: translate(0px, 1000px);
+    opacity: 0;
+    transition-duration: 3s;
+}
+
+/* Box 4: explode (scale up while fading out) */
+main div:nth-child(4):hover {
+    transform: scale(10, 10);
+    opacity: 0;
+    transition-duration: 3s;
+}
+
+/* Box 5: shake (move side-to-side like shaking head no) */
+main div:nth-child(5):hover, main div:nth-child(5):focus {
+    animation-name: shake;
+	animation-duration: 0.8s;
+	transform-origin:50% 50%;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+/* Box 6: 3D flip */
+main div:nth-child(6):hover {
+    transform: rotateY(360deg) rotateX(180deg) rotateZ(90deg);
+    transition-duration: 5s;
+}
+
+@keyframes shake {
+    25% { -webkit-transform: translate(10px, 0px); }
+    75% { -webkit-transform: translate(-10px, 0px); 
+	100% { -webkit-transform: translate(0px, 0px); }
 }
 
 /* TODO: define the following animations and

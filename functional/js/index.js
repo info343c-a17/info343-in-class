@@ -58,6 +58,24 @@ returned a truthy value
 //value in the `sex` property of each object in
 //the array
 
+function isMale(record) {
+    return record.sex === "M";
+}
+
+function isFemale(record) {
+    return record.sex === "F";
+}
+
+//or we can reduce both to one function
+
+function isSex(sex) {
+    //return a new filter test function that...
+    return function(record) {
+        //...compares the .sex property to the 
+        //sex parameter value
+        return record.sex === sex;
+    };
+}
 
 
 
@@ -77,13 +95,33 @@ the second.
 //to sort the BABYNAMES array based on count
 //and name
 
+function byCount(record1, record2) {
+    return record1.count - record2.count;
+}
+
+/* The localeCompare() method returns a number indicating 
+whether a reference string comes before or after 
+or is the same as the given string in sort order. */
+
+function byName(record1, record2) {
+    return record1.name.localeCompare(record2.name);
+}
 
 
 //TODO: create a descending() function that
 //wraps a comparator function to perform a
 //descending sort instead of an ascending sort
 
+//`comparator` is a sort comparator function
+function descending(comparator) {
+    //return a new comparator that...
+    return function(record1, record2) {
+        //...negates the result of `comparator()`
+        return -comparator(record1, record2);
+    }
+}
 
+let byCountDescending = descending(byCount);
 
 /* SLICING 
 Every array has a .slice() method, which returns
@@ -95,6 +133,11 @@ up to but not include.
 //TODO: use .slice() to get the top 10 female baby 
 //name records
 
+let top10Females = BABYNAMES.filter(isFemale)
+.sort(descending(byCount))
+.slice(0,10);
+
+console.log(top10Females);
 
 /* MAPPING
 Every arrays also has a .map() method, which
@@ -110,10 +153,38 @@ the output array.
 //baby name records array into an array of strings
 //containing just the names themselves
 
+//returns just the `name` property
+// function pluckName(record) {
+//     return record.name;
+// }
+
+// or more reusable
+
+//`propName` is a string
+function pluck(propName) {
+    //return a transformer that...
+    return function(record) {
+        //...returns just the requested property
+        return record[propName];
+    }
+}
+
+let pluckName = pluck("name");
+
+let top10FemaleNames = BABYNAMES.filter(isFemale)
+.sort(byCountDescending)
+.slice(0,10)
+.map(pluckName);
+console.log(top10FemaleNames);
 
 //TODO: use .map() to transform those top 10
 //names into all lower case
 
+function toLower(str) {
+    return str.toLowerCase();
+}
+let top10FemaleNamesLower = top10FemaleNames.map(toLower);
+console.log(top10FemaleNamesLower);
 
 
 /* REDUCING
@@ -150,19 +221,27 @@ function randomIntegers(amount, max) {
  */
 function sum(accumulator, num) {
     //TODO: implement this function
+    return accumulator + num;
 }
 
 //TODO: use randomIntegers() to generate an array of 
 //random integers and use .reduce() with sum*() to
 //calculate the sum of those integers.
-
+let someNum = randomIntegers(10,72);
+let newNum = someNum.reduce(sum,0);
+console.log(someNum,newNum);
 
 //TODO: now define a max() reducer that reduces
 //an array of numbers to their maximum value.
 //Then use that with .reduce() to find the 
 //maximum value in an array of random integers.
+function max(n1, n2) {
+    //ternary conditional--see Intro to JavaScript tutorial for details
+    return n2 > n1 ? n2 : n1;
+}
 
-
+let maxNum = someNum.reduce(max,0);
+console.log(maxNum);
 
 //TODO: given that a JavaScript object is really
 //just a map from strings to values, and given
@@ -188,18 +267,30 @@ function sum(accumulator, num) {
  * @param {BabyNameRecord} record 
  * @returns {Object}
  */
-function countNames(nameMap, record) {
+function countNames(nameMap, name) {
     //TODO: implement this function
+
+    //if the object doesn't have a key for
+    //the name yet, add one with a value of 0
+    if (!nameMap.hasOwnProperty(name)) {
+        nameMap[name] = 0;
+    }
+    //increment the count associated with this name
+    nameMap[name]++;
+    //return the map
+    return nameMap;
 }
 
 //TODO: use the countNames reducer to generate
 //an object containing all the distinct names 
 //as keys, with values representing the number of
 //times that name appeared in the array.
+let distinctNames = BABYNAMES.reduce(countNames, {});
+console.log(distinctNames);
 
 //TODO: use Object.keys() to get all of the distinct
 //names as an array of strings
-
+console.log(Object.keys(distinctNames));
 
 //TODO: filter that array of keys so that you end
 //up with only the names that appeared twice,
