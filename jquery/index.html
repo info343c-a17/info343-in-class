@@ -15,18 +15,26 @@
     </header>
 
     <main class="container">
+        <button class="btn btn-primary" type="button" name="clicker">Click me!</button>
+        <button class="btn btn-success" type="button" name="alternate">No, click me!!</button>
         <ul>
             <li><a href="https://www.w3schools.com/jquery/trysel.asp">jQuery Selectors</a></li>
             <li><a href="http://www.google.com">Link 2</a></li>
             <li><a href="http://www.google.com">Link 3</a></li>
         </ul>
-
+        <div id="test1" class="card">Test One!</div>
+        <div id="test2" class="card">Test Two!</div>
+        <div id="test3" class="card">Test Three!</div>
     </main>
 
     <!-- jQuery library -->
+    <!-- The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. 
+        This allows browsers to ensure that resources hosted on third-party servers have not been tampered with. 
+        Use of SRI is recommended as a best-practice, whenever libraries are loaded from a third-party source. 
+        Read more at srihash.org -->
     <script
-    src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
 
     <!-- our script -->
