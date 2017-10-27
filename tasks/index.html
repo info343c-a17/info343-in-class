@@ -17,13 +17,16 @@
             text-decoration: line-through;
             color: #999;
         }
+        .done::after {
+            content: " ✔️";
+        }
     </style>
 </head>
 
 <body>
     <header class="jumbotron jumbotron-fluid bg-primary text-white">
         <div class="container">
-            <h1>Tasks</h1>
+            <h1 class="display-3">☑️ Tasks</h1>
         </div>
     </header>
     <main>
@@ -37,6 +40,7 @@
             <section class="pt-4">
                 <ul class="tasks">
                     <!-- TODO: dynamically add <li> elements for each task -->
+                    No tasks yet...
                 </ul>
 
                 <p>
