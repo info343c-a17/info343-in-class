@@ -1,0 +1,75 @@
+/* all CSS rules start with a selector, and are followed by a set of formatting properties.
+This rule uses `body` as the selector, which is an element selector that selects all elements
+named `body`. For more details on selectors, see https://drstearns.github.io/tutorials/css/#secselectors
+The formatting properties in the rule will be applied to all selected elements.
+Most of these properties will be inherited by descendant elements, but some are not.
+Fonts and line heights are inherited, but margins, borders, and padding are not.
+See https://developer.mozilla.org/en-US/docs/Web/CSS/inheritance
+*/
+body {
+    /* font-family sets the font for the element and all descendant elements.
+    It takes a comma-delimited list of fonts to use, and browsers will use the
+    first one that is avaiable. The `sans-serif` is a keyword that just means 
+    "use whatever sans-serif font is availble."
+     */
+    font-family: 'PT Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-size controls how tall the font will be. `px` is 1/92 of an inch
+    See https://drstearns.github.io/tutorials/css/#secmeasurementunits for more on units */
+    font-size: 18px;
+    /* line-height controls how much white space there is between lines */
+    line-height: 1.5;
+    /* margin sets the margins on all sides all at once */
+    margin: 0;
+    /* padding sets the padding on all sides all at once 
+    margins push elements away from each other while padding
+    adds space between the element's edge and the element's content */
+    padding: 0;
+}
+
+/* here we use a group selector to select all h1 AND all h2 elements */
+h1, h2 {
+    font-family: Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-weight controls the weight of the font (how thin or thick it appears). Normal weight is 400 */
+    font-weight: 200;
+}
+
+h1 {
+    /* `rem` is the default font height, which we set to 18px in the `body` rule,
+    so this sets the h1 element's font-height to be 5 times as big as the body text */
+    font-size: 5rem;
+    /* margin-top sets the top margin only. h1 elements have top/bottom margins by default */
+    margin-top: 0;
+    /* padding-top sets the top padding only. This will stretch open the containing <header>
+    element and push the h1 down to the bottom of that element. */
+    padding-top: 200px;
+}
+
+header {
+    /* background-image uses an image for the element's background. Here we use the header.jpg
+    for the background image, but also add a semi-transparent linear-gradient overlay so that
+    the white text will be easily readable even if the background image is visually busy. 
+    See https://drstearns.github.io/tutorials/css/#secbackgroundimages */
+    background-image: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0)), url(../img/header.jpg);
+    /* background-size: cover; ensures that the background image will always cover the entire 
+    element, regardless of how wide or narrow it ends up being. */
+    background-size: cover;
+    /* color sets the text color. Here we use #FFF, which is a hex-representation for white. 
+    See https://drstearns.github.io/tutorials/css/#seccolors for more details. */
+    color: #FFF;
+}
+
+/* here we use a class selector instead of an element selector. Note the leading `.`
+This will select all elements that have an attribute named "class" that is set to 
+the value "container" (e.g., <div class="container"> ) */
+.container {
+    /* max-width ensures that the element never grows wider than a particular width.
+    Here we constrain it to 1140px so that the line lengths don't get ridiculously long.
+    See https://drstearns.github.io/tutorials/css/#sechorizontallycenteringconstrainedwidthelements */
+    max-width: 1140px;
+    /* this tells the browser to keep this element horizontally-centered even after
+    it stops growing in width */
+    margin: 0 auto;
+    /* if you use two values with `padding`, the first sets the top/bottom padding
+    and the second sets the left/right padding. */
+    padding: 0 1rem;
+}
