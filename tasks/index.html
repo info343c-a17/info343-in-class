@@ -17,6 +17,24 @@
             text-decoration: line-through;
             color: #999;
         }
+
+        .purged {
+            animation-duration: .5s;
+            animation-name: purged;
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+        }
+
+        @keyframes purged {
+        from {
+            color: red;
+        }
+        
+        to {
+            color: white;
+        }
+        }
+
     </style>
 </head>
 
