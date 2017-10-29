@@ -6,6 +6,10 @@
 //`term=...` is how you specify the search term
 const SEARCH_API = "https://itunes.apple.com/search?entity=musicTrack&term="
 
+//a few elements we will need to adjust often
+const PROGRESS_BAR = document.querySelector(".progress");
+const RESULTS_DIV = document.querySelector("#results");
+
 //Audio object to play track previews
 let preview = new Audio();
 
