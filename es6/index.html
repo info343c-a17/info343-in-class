@@ -17,6 +17,27 @@
             text-decoration: line-through;
             color: #999;
         }
+
+        .done::after {
+            content: " ✔️";
+        }
+
+        .purged {
+            animation-duration: .5s;
+            animation-name: purged;
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+        }
+
+        @keyframes purged {
+        from {
+            color: red;
+        }
+        
+        to {
+            color: white;
+        }
+        }
     </style>
 </head>
 
@@ -30,7 +51,7 @@
         <div id="app" class="container">
         </div>
     </main>
-    <script src="build/index.js"></script>
+    <script src="src/index.js"></script>
 </body>
 
 </html>
