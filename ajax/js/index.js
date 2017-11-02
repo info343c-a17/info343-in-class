@@ -13,12 +13,15 @@ const ERROR_ALERT = document.querySelector("#error-alert");
 //and then fetch Weather API for that lat/lng.
 //Render results to the page, or handle errors
 
+// handle errors
+
 function handleError(err) {
-    console.error(err);
+    console.log(err);
     ERROR_ALERT.textContent = err.message;
     ERROR_ALERT.classList.remove("d-none");
 }
 
+// handle responses
 function handleResponse(response) {
     console.log("got response", response);
     if (response.ok) {
@@ -31,19 +34,21 @@ function handleResponse(response) {
     }
 }
 
+// fetch weather
 function fetchWeather(data) {
     console.log(data);
     let latitude = data.latitude;
     let longitude = data.longitude;
-    let url = WEATHER_API.replace("{latitude}", latitude)
-                .replace("{longitude}", longitude);
+    let url = WEATHER_API.replace("{latitude}",latitude)
+        .replace("{longitude}", longitude);
     return fetch(url);
 }
 
+// render weather
 function renderWeather(data) {
     console.log(data);
-    let span = document.querySelector("#temp");
-    span.textContent = data.main.temp;
+    document.querySelector("#temp")
+        .textContent = data.main.temp;
 
     if (data.weather && data.weather[0]) {
         let conditions = data.weather[0];
@@ -62,4 +67,4 @@ fetch(LOCATION_API)
     .then(renderWeather)
     .catch(handleError);
 
-console.log("next line after fetch executes immediately!");
+console.log("next line after fetch executes immediately");
