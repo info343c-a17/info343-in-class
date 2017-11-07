@@ -38,5 +38,3 @@ git pull upstream master
 ```
 
 If you end up in `vim` to confirm a merge message, just hit `Esc` and type `:wq` (for "write and quit") to accept the default message and get back to your command prompt.
-
-
