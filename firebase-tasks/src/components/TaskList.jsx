@@ -1,5 +1,5 @@
 import React from "react";
-//Task
+import Task from "./Task";
 
 export default class TaskList extends React.Component {
     constructor(props) {
@@ -28,8 +28,8 @@ export default class TaskList extends React.Component {
         }
 
         let tasks = [];
-        this.state.tasksSnapshot.forEach(task => {
-            //tasks.push(<Task />)
+        this.state.tasksSnapshot.forEach(taskSnapshot => {
+            tasks.push(<Task key={taskSnapshot.key} taskSnapshot={taskSnapshot} />)
         });
 
         return (
