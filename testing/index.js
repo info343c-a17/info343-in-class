@@ -8,6 +8,8 @@
  * @param {number} n2 
  */
 function byNumber(n1, n2) {
+    if (n1 === undefined) return -1;
+    if (n2 === undefined) return 1;
     return n1 - n2;
 }
 
@@ -34,7 +36,9 @@ function descending(comparator) {
 function max(arrayOfNumbers) {
     //TODO: write unit tests for this code and 
     //discover the bug!
-    let max = 0;
+    if (!arrayOfNumbers) return undefined;
+    //let max = 0;
+    let max = arrayOfNumbers[0];
     for (let i = 0; i < arrayOfNumbers.length; i++) {
         max = arrayOfNumbers[i] > max ? arrayOfNumbers[i] : max;
     }
@@ -50,7 +54,8 @@ function getGreeting(name) {
     //TODO: write unit tests for this code and
     //discover the bug!
     if (!name) {
-        let name = "World";
+        //let name = "World";
+        name = "World";
     }
     return "Hello, " + name + "!"
 }
